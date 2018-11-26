@@ -4,12 +4,12 @@
           <i class="el-icon-kongjianbujumianban logo"  @click="redirectTo('/')"/>
           <span class="title">
               <span>服务器管理平台</span>
-              <span>1.0.1.0</span>
+              <span>{{version}}</span>
           </span>
           <loginUser />
       </div>
       <div class="home-body">
-          <div class="home-body-left">
+          <div class="home-body-left" v-show="siteSetting.menuVisible">
               <navigation :minHeight="navigationMinHeight" :defaultActive="defaultMenu"/>
           </div>
           <div class="home-body-right" ref="bodyRight" :style="bodyRightStyle">
@@ -24,6 +24,7 @@
     import BaseComponent from '@/components/BaseComponent'
     import Navigation from '@/components/menu/Navigation'
     import LoginUser from '@/components/login/LoginUser'
+    import Version from '@/version'
 
     @Component({
         components: {
@@ -35,6 +36,14 @@
         bodyMinHeight = 0
         navigationMinHeight = 0;
         defaultMenu = "/"
+        siteSetting = {
+            menuVisible: false,
+            dashboard: {
+                tomcatVisible: false,
+                proxyVisible: false,
+            }
+        }
+        version = Version.version
 
         get bodyRightStyle() {
             let minHeight = this.bodyMinHeight + "px";
@@ -68,9 +77,21 @@
             this.$nextTick(this.updateBodyRightHeight);
         }
 
+        onGetSetting(code, err, data) {
+            if (code === 0) {
+                this.siteSetting = data;
+                this.onSizeChanged();
+            }
+        }
+        getSetting() {
+            this.post(this.uris.siteOmwSetting, null, this.onGetSetting);
+        }
+
         mounted() {
             window.addEventListener("resize", this.onSizeChanged);
             this.onSizeChanged();
+
+            this.getSetting();
         }
         beforeDestroy() {
             window.removeEventListener("resize", this.onSizeChanged);
@@ -114,7 +135,6 @@
         align-items: start;
     }
     .home-body-left {
-        //width: 200px;
     }
     .home-body-right {
         flex: 1;

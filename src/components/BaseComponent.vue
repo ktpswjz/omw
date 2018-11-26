@@ -40,6 +40,12 @@
             return jsEncrypt.encrypt(data);
         }
 
+        sleep(millisecond) {
+            let t = Date.now();
+            while(Date.now() - t <= millisecond){
+            }
+        }
+
         // example
         // uri: "/user/info"
         // argument: {id: "111212323"}

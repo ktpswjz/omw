@@ -5,7 +5,7 @@ const api = {
 
 const web = {
     dev: "/",
-    pro: "/opt/"
+    pro: "/omw/"
 }
 
 module.exports = {

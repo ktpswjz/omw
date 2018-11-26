@@ -9,16 +9,29 @@
             </span>
         </div>
         <el-menu class="menu" :style="heightStyle"
-                 :collapse="menuCollapse" :router="true" :default-active="defaultActive">
+                 :default-openeds="['/', '/service']"
+                 :collapse="menuCollapse"
+                 :router="true"
+                 :default-active="defaultActive">
             <el-menu-item index="/">
                 <i class="el-icon-menu"></i>
                 <span slot="title">控制面板</span>
             </el-menu-item>
 
-            <el-menu-item index="/service/tomcat">
-                <i class="el-icon-tomcat"></i>
-                <span slot="title">Tomcat</span>
-            </el-menu-item>
+            <el-submenu index="/service">
+                <template slot="title">
+                    <i class="el-icon-fuwuguanli"></i>
+                    <span slot="title">服务管理</span>
+                </template>
+                <el-menu-item index="/service/tomcat">
+                    <i class="el-icon-tomcat1"></i>
+                    <span slot="title">Tomcat</span>
+                </el-menu-item>
+                <el-menu-item index="/service/other">
+                    <i class="el-icon-qitafuwu"></i>
+                    <span slot="title">其它服务</span>
+                </el-menu-item>
+            </el-submenu>
         </el-menu>
     </div>
 
@@ -72,7 +85,7 @@
 
         }
         .menu:not(.el-menu--collapse) {
-            width: 160px;
+            width: 200px;
         }
     }
 </style>

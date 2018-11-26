@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import Login from '@/views/Login'
 import Home from '@/views/Home.vue'
 import Dashboard from '@/views/Dashboard'
-import Tomcat from '@/views/services/Tomcat'
+import SvcTomcat from '@/views/services/Tomcat'
+import SvcOther from '@/views/services/Other'
 
 Vue.use(Router)
 
@@ -30,7 +31,11 @@ export default new Router({
                 },
                 {
                     path: "/service/tomcat",
-                    component: Tomcat
+                    component: SvcTomcat
+                },
+                {
+                    path: "/service/other",
+                    component: SvcOther
                 }
             ]
         },

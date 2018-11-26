@@ -5,7 +5,17 @@ import {
     Input,
     Tooltip,
     Popover,
-    Loading
+    Dialog,
+    Loading,
+    Card,
+    Collapse, CollapseItem,
+    Dropdown, DropdownMenu, DropdownItem,
+    Checkbox,
+    Table, TableColumn,
+    Badge,
+    Select,
+    Option,
+    Progress
 } from 'element-ui';
 import App from './App.vue'
 import router from './router'
@@ -22,6 +32,20 @@ Vue.component(MenuItem.name, MenuItem)
 Vue.component(Input.name, Input)
 Vue.component(Tooltip.name, Tooltip)
 Vue.component(Popover.name, Popover)
+Vue.component(Dialog.name, Dialog)
+Vue.component(Card.name, Card)
+Vue.component(Collapse.name, Collapse)
+Vue.component(CollapseItem.name, CollapseItem)
+Vue.component(Dropdown.name, Dropdown)
+Vue.component(DropdownMenu.name, DropdownMenu)
+Vue.component(DropdownItem.name, DropdownItem)
+Vue.component(Checkbox.name, Checkbox)
+Vue.component(Table.name, Table)
+Vue.component(TableColumn.name, TableColumn)
+Vue.component(Badge.name, Badge)
+Vue.component(Select.name, Select)
+Vue.component(Option.name, Option)
+Vue.component(Progress.name, Progress)
 
 Vue.use(Loading)
 Vue.prototype.uris = Network.uris

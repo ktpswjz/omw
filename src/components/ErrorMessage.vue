@@ -5,7 +5,7 @@
             <span class="msg">{{summary}}</span>
         </span>
         <el-popover trigger="click" placement="top-end" title="错误详细信息" :content="detail" v-show="detailVisible">
-            <el-button slot="reference" type="text" icon="el-icon-document" style="padding: 0px 5px;" />
+            <el-button slot="reference" type="text" icon="el-icon-wenhao" style="padding: 0px 1px 0px 5px;" />
         </el-popover>
     </div>
 </template>
