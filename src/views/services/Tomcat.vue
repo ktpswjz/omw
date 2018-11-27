@@ -23,7 +23,7 @@
     .tomcat {
         margin-top: 5px;
         padding: 0px;
-        border-left: 0.25px solid #ebeef5;
+        border-left: 0.5px solid #ebeef5;
         border-right: 0.5px solid #ebeef5;
     }
 </style>
