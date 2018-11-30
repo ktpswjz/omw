@@ -1,5 +1,5 @@
 <template>
-    <el-collapse class="other">
+    <el-collapse class="other" v-show="items.length > 0">
         <service v-for="(item, index) in items" :key="index" :info="item"/>
     </el-collapse>
 </template>

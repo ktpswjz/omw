@@ -2,7 +2,7 @@
     <div class="login-form" v-loading="logging" element-loading-text="登录中...">
         <div class="title">
             <span>服务器管理平台</span>
-            <span>1.0.1.0</span>
+            <span>{{frontVersion}}</span>
         </div>
         <div class="row">
             <el-input placeholder="请输入账号"
@@ -63,6 +63,7 @@
     export default class LoginForm extends BaseComponent {
         errSummary = ""
         errDetail = ""
+        frontVersion = ""
         captchaImg = ""
         captchaRequired = false
         accountVal = ""
@@ -222,7 +223,17 @@
             this.getCaptcha();
         }
 
+        onGetInfo(code, err, data) {
+            if (code === 0) {
+                this.frontVersion = data.frontVersion;
+            }
+        }
+        getInfo() {
+            this.post(this.uris.authInfo, null, this.onGetInfo);
+        }
+
         mounted() {
+            this.getInfo();
             this.getCaptcha();
 
             if(this.$route.params.backPath) {

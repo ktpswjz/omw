@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import {
+    Message,
     Button,
     Menu, Submenu, MenuItem,
     Input,
@@ -48,6 +49,7 @@ Vue.component(Option.name, Option)
 Vue.component(Progress.name, Progress)
 
 Vue.use(Loading)
+Vue.prototype.message = Message
 Vue.prototype.uris = Network.uris
 Vue.prototype.store = Network.store
 Vue.prototype.network = Network

@@ -1,6 +1,6 @@
 <template>
-    <el-collapse class="tomcat" v-show="items.length > 0">
-        <service v-for="(item, index) in items" :key="index" :info="item"/>
+    <el-collapse class="jar" v-show="items.length > 0">
+        <service v-for="(item, index) in items" :key="index" :svcInfo="item" @deleted="getList"/>
     </el-collapse>
 </template>
 
@@ -14,8 +14,12 @@
             service: Service
         }
     })
-    export default class Tomcat extends BaseComponent {
+    export default class Jar extends BaseComponent {
         items = new Array()
+
+        doSearch() {
+            this.getList();
+        }
 
         onGetList(code, err, data) {
             if (code === 0) {
@@ -26,7 +30,7 @@
             }
         }
         getList() {
-            this.post(this.uris.svcTomcatList, null, this.onGetList);
+            this.post(this.uris.svcJarList, null, this.onGetList);
         }
 
         mounted() {
@@ -36,7 +40,7 @@
 </script>
 
 <style scoped lang="scss">
-    .tomcat {
+    .jar {
 
     }
 </style>

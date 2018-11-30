@@ -27,6 +27,10 @@
                     <i class="el-icon-tomcat1"></i>
                     <span slot="title">Tomcat</span>
                 </el-menu-item>
+                <el-menu-item index="/service/jar">
+                    <i class="el-icon-java"></i>
+                    <span slot="title">jar</span>
+                </el-menu-item>
                 <el-menu-item index="/service/other">
                     <i class="el-icon-qitafuwu"></i>
                     <span slot="title">其它服务</span>

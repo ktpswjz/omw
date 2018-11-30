@@ -119,6 +119,7 @@
                 this.selectedFile = "";
                 this.errSummary = "";
                 this.errDetail = "";
+                this.statusMsg = "";
                 this.uploading = false;
                 this.uploadProgressVisible = false;
                 this.$refs.fileSelector.value = null;

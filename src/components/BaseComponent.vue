@@ -19,6 +19,18 @@
             return true
         }
 
+        error(err) {
+            if(err) {
+                let msg = "<strong>" + err.summary + "</strong>" + "<p>&nbsp;</p><p>" + err.detail +"</p>";
+                this.message({
+                    dangerouslyUseHTMLString: true,
+                    showClose: true,
+                    message: msg,
+                    type: "error"
+                });
+            }
+        }
+
         redirectTo(path) {
             if(this.isNullOrEmpty(path)) {
                 return;

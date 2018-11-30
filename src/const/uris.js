@@ -56,6 +56,18 @@ const uris = {
     // 删除应用
     svcTomcatAppDelete: '/omw.api/svc/tomcat/app/delete',
 
+    // jar服务
+    // 获取配置信息
+    svcJarCfg: '/omw.api/svc/jar/cfg',
+    // 上传服务
+    svcJarUpload: '/omw.api/svc/jar/upload',
+    // 获取服务列表
+    svcJarList: '/omw.api/svc/jar/list',
+    // 获取服务信息
+    svcJarInfo: '/omw.api/svc/jar/info',
+    // 卸载服务
+    svcJarUninstall: '/omw.api/svc/jar/uninstall',
+
     // 转发服务
     // 获取服务配置信息
     proxyCfgServerInfo: '/omw.api/proxy/cfg/server/info',
