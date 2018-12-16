@@ -30,7 +30,7 @@
                 <el-table-column
                         prop="ip"
                         label="目标地址"
-                        width="125px"
+                        width="135px"
                         align="left">
                 </el-table-column>
                 <el-table-column
@@ -44,6 +44,15 @@
                         label="版本"
                         width="45px"
                         align="left">
+                </el-table-column>
+                <el-table-column
+                        prop="disable"
+                        label="已禁用"
+                        width="65px"
+                        align="left">
+                    <div class="btn" slot-scope="scope">
+                        <el-checkbox v-model="scope.row.disable" :disabled="true" />
+                    </div>
                 </el-table-column>
                 <el-table-column width="100px">
                     <div class="btn" slot-scope="scope">
@@ -80,6 +89,10 @@
                         <el-option :value="0" label="0 - 默认"/>
                         <el-option :value="1" label="1 - 在TCP中添加PROXY头部"/>
                     </el-select>
+                </div>
+                <div class="row">
+                    <span class="item-label">禁用:</span>
+                    <el-checkbox class="item-content" v-model="dataModel.disable" />
                 </div>
                 <div class="row">
                     <span class="item-label">&nbsp;</span>
@@ -145,6 +158,7 @@
             ip: "",
             port: "",
             version: 0,
+            disable: false
         }
 
         onUpdate(code, err, data) {
@@ -193,6 +207,7 @@
             this.dataModel.ip = "";
             this.dataModel.port = "";
             this.dataModel.version = 0;
+            this.dataModel.disable = false;
             this.dlgVisible = true;
         }
         modifyItem(data) {
@@ -206,6 +221,7 @@
             this.dataModel.ip = data.ip;
             this.dataModel.port = data.port;
             this.dataModel.version = data.version;
+            this.dataModel.disable = data.disable;
             this.dlgVisible = true;
         }
         deleteItem(data) {
