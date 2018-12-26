@@ -31,8 +31,8 @@
                 </div>
                 <div class="item">
                     <span>IP地址:</span>
-                    <span class="text" v-for="(addr, index) in nic.ipAddrs" :key="index">
-                        <span v-if="isIpV4(addr)">{{addr}}&nbsp;</span>
+                    <span class="text" >
+                        <div v-for="(addr, index) in nic.ipAddrs" :key="index" v-if="isIpV4(addr)">{{addr}}&nbsp;</div>
                     </span>
                 </div>
                 <div class="item">
@@ -126,7 +126,7 @@
 
     .item {
         display: flex;
-        align-items: center;
+        align-items: start;
         font-size: 13px;
         overflow: hidden;
     }

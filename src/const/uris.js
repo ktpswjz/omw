@@ -17,6 +17,8 @@ const uris = {
     sysHostInfo: '/omw.api/sys/host/info',
     // 获取网卡信息
     sysNetworkInterfaceList: '/omw.api/sys/network/interface/list',
+    // 获取监听端口
+    sysListenPortList: '/omw.api/sys/network/listen/port/list',
 
     // 服务
     // 获取服务状态

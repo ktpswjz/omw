@@ -17,8 +17,9 @@
                            icon="el-icon-wangzhan"
                            :infoUri="this.uris.siteOmwInfo"
                            :uploadUri="this.uris.siteOmwUpload"/>
+                <listeningPort class="cell" v-if="siteSetting.dashboard.listenPortVisible"/>
             </div>
-            <div class="col" style="min-width: 40%;">
+            <div class="col" style="width: 480px;">
                 <svcOmw class="cell" />
                 <host class="cell" />
                 <interface class="cell" />
@@ -34,6 +35,7 @@
     import Proxy from '@/components/svc/proxy/Proxy'
     import Host from '@/components/sys/host/Host'
     import Interface from '@/components/sys/network/Interface'
+    import ListeningPort from '@/components/sys/network/Listening'
     import SvcOmw from '@/components/svc/omw/Omw'
     import TomcatInfo from '@/components/svc/tomcat/Tomcat'
     import OtherInfo from '@/components/svc/other/Other'
@@ -44,6 +46,7 @@
             proxy: Proxy,
             host: Host,
             interface: Interface,
+            listeningPort: ListeningPort,
             svcOmw: SvcOmw,
             tomcatInfo: TomcatInfo,
             otherInfo: OtherInfo
