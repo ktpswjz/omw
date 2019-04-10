@@ -78,6 +78,12 @@
                                 align="right">
                         </el-table-column>
                         <el-table-column
+                                prop="version"
+                                label="版本号"
+                                width="100px"
+                                align="left">
+                        </el-table-column>
+                        <el-table-column
                                 prop="deployTime"
                                 label="发布时间"
                                 width="155px"

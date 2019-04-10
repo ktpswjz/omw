@@ -4,6 +4,7 @@
             <div>
                 <i class="el-icon-setting" ></i>
                 <span>监听端口</span>
+                <el-badge class="badge" type="primary" :value="itemCount" v-if="itemCount > 0"/>
             </div>
             <div >
                 <el-tooltip placement="top">
@@ -19,8 +20,15 @@
                    ref="tableList"
                    :uri="this.uris.sysListenPortList"
                    size="small"
-                   :border="false">
+                   :border="false"
+                   @searched="onSearched">
             <template slot="columns">
+                <el-table-column
+                        label="序号"
+                        type="index"
+                        width="55"
+                        align="right">
+                </el-table-column>
                 <el-table-column
                         prop="address"
                         label="地址"
@@ -56,6 +64,16 @@
     export default class Listening extends BaseComponent {
         bodyStyle = {
             padding: "5px 1px 5px 10px"
+        }
+        itemCount = 0
+
+        onSearched(data) {
+            if(data) {
+                this.itemCount = data.length;
+            }
+            else {
+                this.itemCount = 0;
+            }
         }
 
         doSearch() {

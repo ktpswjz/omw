@@ -17,12 +17,12 @@
                            icon="el-icon-wangzhan"
                            :infoUri="this.uris.siteOmwInfo"
                            :uploadUri="this.uris.siteOmwUpload"/>
-                <listeningPort class="cell" v-if="siteSetting.dashboard.listenPortVisible"/>
             </div>
             <div class="col" style="width: 480px;">
                 <svcOmw class="cell" />
                 <host class="cell" />
                 <interface class="cell" />
+                <listeningPort class="cell" v-if="siteSetting.dashboard.listenPortVisible"/>
             </div>
         </div>
     </div>
